@@ -3,7 +3,7 @@ class Bike
   attr_accessor :wheels, :color, :brand, :production_year
 
   def initialize(wheels, color, brand, production_year)
-    @wheels = whells
+    @wheels = wheels
     @color = color
     @brand = brand
     @production_year = production_year
@@ -42,4 +42,5 @@ bike3 = Bike.new(2, "niebieski", "Skladak", "2012")
 
 bikes = [bike, bike1, bike2, bike3]
 
-bikes.each {|k| k.brand}
+bikes.each_with_index {|k, index| puts "#{index + 1}. " + k.brand}
+
