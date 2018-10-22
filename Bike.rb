@@ -10,20 +10,14 @@ class Bike
   end
     
   def famous?
-    if @brand == "Romet" || "Wicher" || "Skladak"
-      true
-    else
-      false
-    end
+    ["Romet", "Wicher", "Skladak"].include?(@brand)
   end
 
   def kind_of_bike
     if @wheels == 2
-    puts "1-sladowy"
-    elsif 
-      @wheels == 4
+      puts "1-sladowy"
+    elsif @wheels == 4
       puts "2- sladowy"
-    end
     end
   end
 
@@ -31,11 +25,8 @@ class Bike
     @brand = "Romet"
   end
 
-  def is_younger_than?(year)
-    if year < @production_name 
-      true
-    else
-      false
+  def is_younger_than?(year)  
+    year < @production_name 
   end
 
   def show
@@ -44,9 +35,11 @@ class Bike
 
 end
 
-Table = ["Romet", "Wicher", "Kapper", "Trek"]
+bike = Bike.new(2, "czerwony", "Romet", "2015")
+bike1 = Bike.new(2, "bialy", "Wicher", "2009")
+bike2 = Bike.new(2, "zielony", "Trek", "2016")
+bike3 = Bike.new(2, "niebieski", "Skladak", "2012")
 
-puts "1. " + Table[0]
-puts "2. " + Table[1]
-puts "3. " + Table[2]
-puts "4. " + Table[3]
+bikes = [bike, bike1, bike2, bike3]
+
+bikes.each {|k| k.brand}
